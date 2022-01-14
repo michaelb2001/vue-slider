@@ -1,3 +1,4 @@
+
 let vm = new Vue({
     el:"#app",
     data:{
@@ -50,82 +51,10 @@ let vm = new Vue({
             }
         },
 
-        rendiactive : function(indice){
+        rendiActive : function(indice){
             this.current = indice;
+            
         }
     }
 });
 
-
-
-/*
-let contenutiL="";
-for(let i=0 ; i<items.length; i++){
-
-    if(i==1){
-        contenutiL += 
-        `<img src="${items[i]}" id="item-${i}" class="active">`;
-    }else{
-        contenutiL += 
-        `<img src="${items[i]}" id="item-${i}">`;
-    }
-}
-
-document.getElementById("laterale").innerHTML = 
-`<div id="prev">&uarr;</div>
- <div id="next">&darr;</div>${contenutiL}`;
-
-counter =1;
-
-const prev = document.getElementById("prev");
-const next = document.getElementById("next");
-
-prev.addEventListener('click',function(){
-    document.getElementById("item-"+counter).classList.remove("active");
-    counter--;
-    if(counter==-1){
-        counter++;
-        document.getElementById("item-p-"+counter).classList.remove("active");
-        document.getElementById("item-p-"+counter).classList.add("hidden");
-        counter=items.length-1;
-        document.getElementById("item-"+counter).classList.remove("hidden");
-        document.getElementById("item-"+counter).classList.add("active");
-        document.getElementById("item-p-"+counter).classList.remove("hidden");
-        document.getElementById("item-p-"+counter).classList.add("active"); 
-    }else{
-        counter++;
-        document.getElementById("item-p-"+counter).classList.remove("active");
-        document.getElementById("item-p-"+counter).classList.add("hidden");
-        counter--;
-        document.getElementById("item-"+counter).classList.remove("hidden");
-        document.getElementById("item-"+counter).classList.add("active");
-        document.getElementById("item-p-"+counter).classList.remove("hidden");
-        document.getElementById("item-p-"+counter).classList.add("active");
-    }
-
-});
-
-next.addEventListener('click',function(){
-    document.getElementById("item-"+counter).classList.remove("active");
-    counter++;
-    if(counter == items.length){
-        counter--;
-        document.getElementById("item-p-"+counter).classList.remove("active");
-        document.getElementById("item-p-"+counter).classList.add("hidden");
-        counter=0;
-        document.getElementById("item-"+counter).classList.remove("hidden");
-        document.getElementById("item-"+counter).classList.add("active");
-        document.getElementById("item-p-"+counter).classList.remove("hidden");
-        document.getElementById("item-p-"+counter).classList.add("active");
-    }else{
-        counter--;
-        document.getElementById("item-p-"+counter).classList.remove("active");
-        document.getElementById("item-p-"+counter).classList.add("hidden");
-        counter++;
-        document.getElementById("item-"+counter).classList.remove("hidden");
-        document.getElementById("item-"+counter).classList.add("active");
-        document.getElementById("item-p-"+counter).classList.remove("hidden");
-        document.getElementById("item-p-"+counter).classList.add("active");
-    }
- 
-});*/

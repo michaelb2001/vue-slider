@@ -23,7 +23,7 @@
         </div>
         <div id="laterale" class="laterale h-100 d-flex flex-column justify-content-center align-items-center">
             <div v-for="(element,index) in arrayObj.items" class="item-l">
-                <img :src="element" @click="rendiactive(index)" >
+                <img :src="element" @click="rendiActive(index)" >
             </div>
             <div id="prev" @click="prev()">&uarr;</div>
             <div id="next" @click="next()">&darr;</div>
