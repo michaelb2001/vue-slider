@@ -45,6 +45,7 @@ let vm = new Vue({
         },
 
         next : function(){
+            console.log("ciao");
             this.current++;
             if(this.current == this.arrayObj.items.length ){
                 this.current = 0;
@@ -59,7 +60,7 @@ let vm = new Vue({
     },
 
     created : function(){
-        setInterval(this.next(),3000);
+        setInterval(this.next,3000);
     }
 });
 
