@@ -54,7 +54,14 @@ let vm = new Vue({
         rendiActive : function(indice){
             this.current = indice;
             
-        }
+        },
+
+    },
+
+    created : function(){
+        setInterval(this.next(),3000);
     }
 });
+
+
 
