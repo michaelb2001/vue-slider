@@ -1,6 +1,7 @@
 let vm = new Vue({
-    el:"#principale",
+    el:"#app",
     data:{
+        current : 1,
         arrayObj: {
             items : [
                 'img/01.jpg',
@@ -25,40 +26,39 @@ let vm = new Vue({
             ]
         }
 
+    },
+    methods:{
+        isactive : function(indice){
+            if (indice == this.current) {
+                return "active";
+            }
+            return "";
+
+        },
+
+        prev : function(){
+            this.current--;
+            if(this.current < 0){
+                this.current = this.arrayObj.items.length - 1;
+            }
+        },
+
+        next : function(){
+            this.current++;
+            if(this.current == this.arrayObj.items.length ){
+                this.current = 0;
+            }
+        },
+
+        rendiactive : function(indice){
+            this.current = indice;
+        }
     }
 });
 
-/*console.log(this.title);
-//definisco gli array;
-
-let contenutiP="";
-for(let i=0 ; i<items.length; i++){
-    if(i==1){
-        contenutiP +=
-        `<div id="item-p-${i}" class="active">
-            <img src="${items[i]}">
-            <div class="testo">
-                <h2 id="titolo-${i}">${title[i]}</h2>
-                <p id="minitext-${i}">${text[i]}</p>
-            </div>
-        </div>
-        `;
-    }else{
-        contenutiP += 
-        `<div id="item-p-${i}" class="hidden">
-            <img src="${items[i]}" id="item-p-${i}" >
-            <div class="testo">
-                <h2 id="titolo-${i}">${title[i]}</h2>
-                <p id="minitext-${i}">${text[i]}</p>
-            </div>
-        </div>
-        `;
-    }
-}
-
-document.getElementById("principale").innerHTML = contenutiP;
 
 
+/*
 let contenutiL="";
 for(let i=0 ; i<items.length; i++){
 

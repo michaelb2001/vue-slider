@@ -9,27 +9,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container-fluid d-flex align-items-center justify-content-center">
+    <div id="app" class="container-fluid d-flex align-items-center justify-content-center">
         <div id="principale" class="principale h-100">
 
-            <div v-for="(element,index) in arrayObj" class="item" >
+            <div v-for="(element,index) in arrayObj.items" class="item hidden" :class="isactive(index)">
                 <img :src="element">
                 <div class="testo">
-                    <h2>{{element.text}}</h2>
-                    <p></p>
+                    <h2>{{arrayObj.title[index]}}</h2>
+                    <p>{{arrayObj.text[index]}}</p>
                 </div>
             </div>
-        <!--<div id="item-p-${i}" class="active">
-                <img src="">
-                <div class="testo">
-                    <h2 id="titolo-${i}">${title[i]}</h2>
-                    <p id="minitext-${i}">${text[i]}</p>
-                </div>
-            </div>-->
+
         </div>
         <div id="laterale" class="laterale h-100 d-flex flex-column justify-content-center align-items-center">
-            <div id="prev">&uarr;</div>
-            <div id="next">&darr;</div>
+            <div v-for="(element,index) in arrayObj.items" class="item-l">
+                <img :src="element" @click="rendiactive(index)" >
+            </div>
+            <div id="prev" @click="prev()">&uarr;</div>
+            <div id="next" @click="next()">&darr;</div>
         </div>
     </div>
 
