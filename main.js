@@ -2,6 +2,7 @@
 let vm = new Vue({
     el:"#app",
     data:{
+        scorri : null,
         current : 1,
         arrayObj: {
             items : [
@@ -56,11 +57,18 @@ let vm = new Vue({
             this.current = indice;
             
         },
+        autoplay : function(){
+            this.scorri = setInterval(this.next,3000);
+        },
+        stoplay : function(){
+            clearInterval(this.scorri);
+            this.scorri = null;
+        }
 
     },
 
     mounted : function(){
-        setInterval(this.next,3000);
+        this.autoplay();
     },
 });
 
