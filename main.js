@@ -59,9 +59,9 @@ let vm = new Vue({
 
     },
 
-    created : function(){
+    mounted : function(){
         setInterval(this.next,3000);
-    }
+    },
 });
 
 
